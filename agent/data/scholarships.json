@@ -1,0 +1,45 @@
+{
+  "_note": "SYNTHETIC DEMONSTRATION DATA — not real scholarship records",
+  "scholarships": [
+    {
+      "id": "SCH001", "name": "Merit Excellence Scholarship",
+      "type": "merit", "amount_per_year": 20000,
+      "eligibility": {"min_cgpa": 9.0, "family_income_limit": null, "year": "any"},
+      "deadline": "2026-11-30", "documents": ["Mark sheets", "Bonafide certificate", "Bank account details"],
+      "status": "open", "renewable": true, "renewal_condition": "Maintain CGPA >= 9.0"
+    },
+    {
+      "id": "SCH002", "name": "Government Post-Matric Scholarship",
+      "type": "need-based", "amount_per_year": 15000,
+      "eligibility": {"min_cgpa": null, "family_income_limit": 250000, "caste_category": ["SC", "ST", "OBC"], "year": "any"},
+      "deadline": "2026-10-31", "documents": ["Income certificate", "Caste certificate", "Mark sheets", "Bank passbook"],
+      "status": "closing_soon", "renewable": true, "apply_at": "https://scholarships.gov.in"
+    },
+    {
+      "id": "SCH003", "name": "Sports Achievers Grant",
+      "type": "sports", "amount_per_year": 10000,
+      "eligibility": {"sports_achievement": "State level or above", "min_attendance": 75},
+      "deadline": "2026-11-15", "documents": ["Sports certificates", "Principal recommendation", "ID proof"],
+      "status": "open", "renewable": false
+    },
+    {
+      "id": "SCH004", "name": "Industry Sponsorship – TechCorp",
+      "type": "industry", "amount_per_year": 30000,
+      "eligibility": {"department": ["Computer Science", "Electronics"], "min_cgpa": 8.0, "year": [3, 4]},
+      "deadline": "2026-11-20", "documents": ["Resume", "SOP (500 words)", "Academic transcripts"],
+      "status": "open", "bond_required": true, "bond_years": 2
+    }
+  ],
+  "applications": [
+    {"app_id": "APP001", "student_id": "S001", "scholarship_id": "SCH001", "submitted_date": "2026-10-10", "status": "under_review"},
+    {"app_id": "APP002", "student_id": "S002", "scholarship_id": "SCH002", "submitted_date": "2026-10-05", "status": "approved", "amount_disbursed": 15000},
+    {"app_id": "APP003", "student_id": "S004", "scholarship_id": "SCH001", "submitted_date": "2026-10-12", "status": "under_review"}
+  ],
+  "general_instructions": [
+    "Apply through the student portal at https://portal.campus.edu/scholarships.",
+    "All documents must be self-attested.",
+    "Incomplete applications will be rejected without notice.",
+    "Decisions are final; appeals must be submitted within 7 days of result announcement.",
+    "Scholarship amounts are credited directly to the student's bank account."
+  ]
+}

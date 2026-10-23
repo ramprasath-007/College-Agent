@@ -1,0 +1,25 @@
+{"state": "What is my current CGPA?", "expected": {"tool": "academic_agent"}, "split": "tune"}
+{"state": "Show me my attendance percentage for this semester.", "expected": {"tool": "academic_agent"}, "split": "tune"}
+{"state": "What courses am I enrolled in right now?", "expected": {"tool": "academic_agent"}, "split": "tune"}
+{"state": "When is the timetable for CS semester 5?", "expected": {"tool": "academic_agent"}, "split": "tune"}
+{"state": "When is my next exam?", "expected": {"tool": "examination_agent"}, "split": "tune"}
+{"state": "How do I get my hall ticket?", "expected": {"tool": "examination_agent"}, "split": "tune"}
+{"state": "What were my marks in the last semester internal assessments?", "expected": {"tool": "examination_agent"}, "split": "tune"}
+{"state": "What is the fee due date for this semester?", "expected": {"tool": "finance_agent"}, "split": "tune"}
+{"state": "I paid my tuition but the portal still shows a balance. What do I do?", "expected": {"tool": "finance_agent"}, "split": "tune"}
+{"state": "What is the refund policy if I withdraw from a course?", "expected": {"tool": "finance_agent"}, "split": "tune"}
+{"state": "Which companies are coming for placements this month?", "expected": {"tool": "placement_agent"}, "split": "tune"}
+{"state": "Am I eligible for the upcoming Amazon placement drive?", "expected": {"tool": "placement_agent"}, "split": "tune"}
+{"state": "What internship opportunities are available for third year students?", "expected": {"tool": "placement_agent"}, "split": "tune"}
+{"state": "How do I apply for the merit scholarship?", "expected": {"tool": "scholarship_agent"}, "split": "tune"}
+{"state": "What scholarships are available for students from low-income families?", "expected": {"tool": "scholarship_agent"}, "split": "tune"}
+{"state": "What is the deadline to apply for government scholarships?", "expected": {"tool": "scholarship_agent"}, "split": "tune"}
+{"state": "Where is the library and what are its hours?", "expected": {"tool": "general_support_agent"}, "split": "tune"}
+{"state": "How do I get my student ID card replaced?", "expected": {"tool": "general_support_agent"}, "split": "test"}
+{"state": "What bus routes go to the college campus?", "expected": {"tool": "general_support_agent"}, "split": "test"}
+{"state": "What is my result for the end semester examination?", "expected": {"tool": "examination_agent"}, "split": "test"}
+{"state": "I need a fee receipt for my scholarship application.", "expected": {"tool": "finance_agent"}, "split": "test"}
+{"state": "What is the minimum attendance required to sit for exams?", "expected": {"tool": "academic_agent"}, "split": "test"}
+{"state": "Can you tell me the placement statistics for the 2025-26 batch?", "expected": {"tool": "placement_agent"}, "split": "test"}
+{"state": "Is there a scholarship that covers hostel fees?", "expected": {"tool": "scholarship_agent"}, "split": "test"}
+{"state": "I missed an internal exam. What happens to my marks?", "expected": {"tool": "examination_agent"}, "split": "test"}

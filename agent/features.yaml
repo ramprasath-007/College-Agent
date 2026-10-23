@@ -1,0 +1,5 @@
+# AgentCore feature flags for CampusAI deployment
+# Memory and Gateway are optional for this submission.
+
+memory: false
+gateway: false

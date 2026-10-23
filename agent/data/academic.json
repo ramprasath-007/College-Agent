@@ -1,0 +1,40 @@
+{
+  "_note": "SYNTHETIC DEMONSTRATION DATA — not real student records",
+  "students": [
+    {"id": "S001", "name": "Arjun Sharma", "department": "Computer Science", "year": 3, "semester": 5, "cgpa": 8.4, "attendance_pct": 82},
+    {"id": "S002", "name": "Priya Nair", "department": "Electronics", "year": 2, "semester": 3, "cgpa": 9.1, "attendance_pct": 91},
+    {"id": "S003", "name": "Rahul Mehta", "department": "Mechanical", "year": 4, "semester": 7, "cgpa": 7.8, "attendance_pct": 76},
+    {"id": "S004", "name": "Sneha Patel", "department": "Computer Science", "year": 1, "semester": 1, "cgpa": 8.9, "attendance_pct": 95},
+    {"id": "S005", "name": "Vikram Reddy", "department": "Civil", "year": 3, "semester": 5, "cgpa": 7.2, "attendance_pct": 68}
+  ],
+  "courses": [
+    {"code": "CS501", "name": "Data Structures and Algorithms", "credits": 4, "department": "Computer Science", "semester": 5, "faculty": "Dr. Meera Krishnan", "schedule": "Mon/Wed/Fri 9:00–10:00"},
+    {"code": "CS502", "name": "Database Management Systems", "credits": 4, "department": "Computer Science", "semester": 5, "faculty": "Dr. Anand Iyer", "schedule": "Tue/Thu 10:00–11:30"},
+    {"code": "CS503", "name": "Operating Systems", "credits": 3, "department": "Computer Science", "semester": 5, "faculty": "Prof. Rajesh Kumar", "schedule": "Mon/Wed 11:00–12:00"},
+    {"code": "EC301", "name": "Digital Signal Processing", "credits": 4, "department": "Electronics", "semester": 3, "faculty": "Dr. Sunita Rao", "schedule": "Tue/Thu 9:00–10:30"},
+    {"code": "ME701", "name": "Advanced Thermodynamics", "credits": 4, "department": "Mechanical", "semester": 7, "faculty": "Prof. Gopal Verma", "schedule": "Mon/Wed/Fri 10:00–11:00"}
+  ],
+  "attendance_policy": {
+    "minimum_required_pct": 75,
+    "shortage_fine_per_pct": 200,
+    "condonation_limit_pct": 65,
+    "medical_leave_eligible": true
+  },
+  "timetable": {
+    "CS_SEM5": [
+      {"day": "Monday", "slots": ["CS501 9:00", "CS503 11:00", "CS504 Lab 2:00"]},
+      {"day": "Tuesday", "slots": ["CS502 10:00", "CS505 2:00"]},
+      {"day": "Wednesday", "slots": ["CS501 9:00", "CS503 11:00"]},
+      {"day": "Thursday", "slots": ["CS502 10:00", "CS506 2:00"]},
+      {"day": "Friday", "slots": ["CS501 9:00", "CS507 Lab 2:00"]}
+    ]
+  },
+  "regulations": [
+    "Minimum 75% attendance is mandatory in each subject.",
+    "Students with less than 65% attendance are not eligible to appear for semester exams.",
+    "Academic calendar follows two semesters per year: July–November and January–May.",
+    "Grade point scale: O(10), A+(9), A(8), B+(7), B(6), C(5), U(0-fail).",
+    "Students may apply for re-evaluation within 10 days of result publication.",
+    "Arrear exams are conducted along with the regular semester exams."
+  ]
+}

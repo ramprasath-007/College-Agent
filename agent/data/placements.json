@@ -1,0 +1,53 @@
+{
+  "_note": "SYNTHETIC DEMONSTRATION DATA — not real placement records",
+  "placement_drives": [
+    {
+      "id": "PD001", "company": "TechCorp Solutions", "role": "Software Engineer",
+      "package_lpa": 8.5, "date": "2026-11-05", "venue": "Seminar Hall A",
+      "eligible_departments": ["Computer Science", "Electronics"],
+      "eligible_years": [4], "min_cgpa": 7.0, "backlogs_allowed": 0,
+      "rounds": ["Aptitude", "Technical", "HR"], "status": "upcoming"
+    },
+    {
+      "id": "PD002", "company": "DataInsights Pvt Ltd", "role": "Data Analyst",
+      "package_lpa": 7.0, "date": "2026-11-08", "venue": "Seminar Hall B",
+      "eligible_departments": ["Computer Science", "Mathematics"],
+      "eligible_years": [4], "min_cgpa": 6.5, "backlogs_allowed": 1,
+      "rounds": ["Online Test", "Interview"], "status": "upcoming"
+    },
+    {
+      "id": "PD003", "company": "BuildBridge Infrastructure", "role": "Junior Engineer",
+      "package_lpa": 5.5, "date": "2026-11-15", "venue": "Conference Room 1",
+      "eligible_departments": ["Civil", "Mechanical"],
+      "eligible_years": [4], "min_cgpa": 6.0, "backlogs_allowed": 2,
+      "rounds": ["Written Test", "Technical Interview", "HR"], "status": "upcoming"
+    },
+    {
+      "id": "PD004", "company": "Innovatek Systems", "role": "Embedded Systems Intern",
+      "package_lpa": 3.6, "date": "2026-10-28", "venue": "Lab Block 3",
+      "eligible_departments": ["Electronics", "Computer Science"],
+      "eligible_years": [3, 4], "min_cgpa": 7.5, "backlogs_allowed": 0,
+      "rounds": ["Coding Round", "Technical Interview"], "status": "completed",
+      "selected_count": 12
+    }
+  ],
+  "internships": [
+    {"company": "CloudNet India", "role": "Cloud Intern", "duration_months": 3, "stipend_month": 8000, "deadline": "2026-11-01", "apply_at": "placement.office@campus.edu"},
+    {"company": "GreenEnergy Tech", "role": "Research Intern", "duration_months": 2, "stipend_month": 5000, "deadline": "2026-11-10", "apply_at": "placement.office@campus.edu"}
+  ],
+  "placement_stats": {
+    "year": "2025–26",
+    "total_eligible": 312,
+    "placed": 278,
+    "placement_pct": 89.1,
+    "highest_package_lpa": 24.0,
+    "average_package_lpa": 9.2,
+    "companies_visited": 45
+  },
+  "eligibility_rules": {
+    "min_attendance_pct": 75,
+    "active_backlogs_allowed_default": 0,
+    "registration_required": true,
+    "registration_portal": "https://placements.campus.edu"
+  }
+}

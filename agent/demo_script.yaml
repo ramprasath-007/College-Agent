@@ -1,0 +1,34 @@
+# CampusAI demo script — used by ./kit video
+# Each turn shows one student query, the tool the Decider routes to, and neutral narration.
+
+turns:
+  - say: "What courses am I enrolled in and what is my current attendance?"
+    tool: academic_agent
+    narration: >-
+      The student asks about their enrolled courses and attendance.
+      Strands Decider 2B reads the query and routes it to the academic tool
+      with high confidence. The agent returns course details and attendance
+      data from the academic domain without calling any other tool.
+
+  - say: "How much of my tuition fee is still due this semester?"
+    tool: finance_agent
+    narration: >-
+      A finance query. The Decider routes to the finance tool, which returns
+      the fee structure, payment status and the upcoming due date.
+      No academic or placement data is loaded.
+
+  - say: "Which companies are visiting campus for placements next month?"
+    tool: placement_agent
+    narration: >-
+      The student asks about upcoming placement drives.
+      The Decider selects the placement tool. The agent lists the scheduled
+      drives, the companies visiting, and the eligibility criteria.
+
+  - say: "Are there any scholarships I can apply for before the end of the month?"
+    tool: scholarship_agent
+    narration: >-
+      A scholarship deadline query. The Decider routes to the scholarship tool,
+      which returns available programs, their eligibility conditions,
+      and the application deadlines. The decision took one forward pass
+      through Strands Decider 2B — no generative model call was needed
+      to pick the tool.

@@ -1,0 +1,50 @@
+{
+  "_note": "SYNTHETIC DEMONSTRATION DATA — not real campus records",
+  "departments": [
+    {"name": "Computer Science and Engineering", "hod": "Dr. R. Krishnamurthy", "office": "Block A, Room 101", "email": "cse@campus.edu", "phone": "044-2345-6701"},
+    {"name": "Electronics and Communication", "hod": "Dr. S. Radhakrishnan", "office": "Block B, Room 201", "email": "ece@campus.edu", "phone": "044-2345-6702"},
+    {"name": "Mechanical Engineering", "hod": "Prof. K. Gopalakrishnan", "office": "Block C, Room 301", "email": "mech@campus.edu", "phone": "044-2345-6703"},
+    {"name": "Civil Engineering", "hod": "Dr. M. Venkatesan", "office": "Block D, Room 401", "email": "civil@campus.edu", "phone": "044-2345-6704"},
+    {"name": "Academic Affairs", "head": "Registrar Dr. P. Sundaram", "office": "Admin Block, Room 001", "email": "registrar@campus.edu", "phone": "044-2345-6700"}
+  ],
+  "library": {
+    "name": "Central Library",
+    "location": "Library Block, Ground Floor",
+    "hours": {"weekdays": "8:00 AM – 8:00 PM", "saturday": "9:00 AM – 5:00 PM", "sunday": "closed"},
+    "total_books": 45000,
+    "digital_resources": ["IEEE Xplore", "ACM Digital Library", "Springer Link", "NPTEL"],
+    "borrowing_policy": {"max_books": 3, "loan_period_days": 14, "fine_per_day": 2},
+    "contact": "library@campus.edu"
+  },
+  "transport": {
+    "routes": [
+      {"route_no": "R01", "from": "Central Bus Stand", "via": ["Anna Nagar", "Velachery"], "timing": "7:45 AM / 5:30 PM"},
+      {"route_no": "R02", "from": "Tambaram", "via": ["Chromepet", "Pallavaram"], "timing": "7:30 AM / 5:30 PM"},
+      {"route_no": "R03", "from": "Porur", "via": ["Vadapalani", "Ashok Nagar"], "timing": "7:40 AM / 5:30 PM"}
+    ],
+    "fee_per_semester": 4500,
+    "contact": "transport@campus.edu",
+    "note": "Students must register for transport by the end of the first week of each semester."
+  },
+  "facilities": [
+    {"name": "Main Canteen", "location": "Ground Floor, Block E", "hours": "7:30 AM – 7:00 PM"},
+    {"name": "Sports Complex", "location": "Behind Block D", "facilities": ["Cricket ground", "Basketball court", "Badminton court", "Gymnasium"], "hours": "6:00 AM – 8:00 PM"},
+    {"name": "Medical Centre", "location": "Block A, Ground Floor", "doctor": "Dr. Kavitha Selvan", "hours": "9:00 AM – 4:00 PM", "emergency": "044-2345-6799"},
+    {"name": "Hostel", "location": "Campus North", "capacity": 800, "contact": "hostel@campus.edu", "warden": "Mr. Suresh Babu"},
+    {"name": "Wi-Fi Campus", "coverage": "All blocks and hostel", "speed_mbps": 1000, "password_reset": "IT Help Desk, Block A Room 002"}
+  ],
+  "important_contacts": [
+    {"role": "Principal", "name": "Dr. A. Venkataraman", "email": "principal@campus.edu", "phone": "044-2345-6700"},
+    {"role": "Anti-Ragging Cell", "phone": "044-2345-6798", "email": "antiragging@campus.edu"},
+    {"role": "Grievance Cell", "email": "grievance@campus.edu", "submission": "Online at https://portal.campus.edu/grievance"},
+    {"role": "IT Help Desk", "location": "Block A Room 002", "hours": "9:00 AM – 5:00 PM", "email": "ithelpdesk@campus.edu"}
+  ],
+  "academic_calendar_highlights": [
+    {"event": "Odd Semester Classes Begin", "date": "2026-07-15"},
+    {"event": "Internal Assessment 1", "date": "2026-08-25 to 2026-08-30"},
+    {"event": "Internal Assessment 2", "date": "2026-10-05 to 2026-10-10"},
+    {"event": "Semester Exam Registration Last Date", "date": "2026-10-20"},
+    {"event": "Semester Exams", "date": "2026-11-10 to 2026-11-28"},
+    {"event": "Even Semester Classes Begin", "date": "2027-01-10"}
+  ]
+}

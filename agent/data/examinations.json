@@ -1,0 +1,34 @@
+{
+  "_note": "SYNTHETIC DEMONSTRATION DATA — not real exam records",
+  "upcoming_exams": [
+    {"code": "CS501", "subject": "Data Structures and Algorithms", "date": "2026-11-10", "time": "10:00 AM", "hall": "A101", "duration_hrs": 3},
+    {"code": "CS502", "subject": "Database Management Systems", "date": "2026-11-12", "time": "10:00 AM", "hall": "A102", "duration_hrs": 3},
+    {"code": "CS503", "subject": "Operating Systems", "date": "2026-11-14", "time": "02:00 PM", "hall": "B201", "duration_hrs": 3},
+    {"code": "EC301", "subject": "Digital Signal Processing", "date": "2026-11-11", "time": "10:00 AM", "hall": "C301", "duration_hrs": 3},
+    {"code": "ME701", "subject": "Advanced Thermodynamics", "date": "2026-11-13", "time": "02:00 PM", "hall": "D401", "duration_hrs": 3}
+  ],
+  "hall_tickets": [
+    {"student_id": "S001", "semester": 5, "status": "issued", "download_link": "/hall-ticket/S001/sem5", "issued_date": "2026-10-25"},
+    {"student_id": "S002", "semester": 3, "status": "issued", "download_link": "/hall-ticket/S002/sem3", "issued_date": "2026-10-25"},
+    {"student_id": "S003", "semester": 7, "status": "withheld", "reason": "fee dues pending", "issued_date": null},
+    {"student_id": "S004", "semester": 1, "status": "issued", "download_link": "/hall-ticket/S004/sem1", "issued_date": "2026-10-25"},
+    {"student_id": "S005", "semester": 5, "status": "withheld", "reason": "attendance shortage in CE501", "issued_date": null}
+  ],
+  "results": [
+    {"student_id": "S001", "semester": 4, "subjects": [{"code": "CS401", "grade": "A+", "gp": 9}, {"code": "CS402", "grade": "O", "gp": 10}, {"code": "CS403", "grade": "A", "gp": 8}], "sgpa": 9.0},
+    {"student_id": "S002", "semester": 2, "subjects": [{"code": "EC201", "grade": "O", "gp": 10}, {"code": "EC202", "grade": "A+", "gp": 9}], "sgpa": 9.5},
+    {"student_id": "S003", "semester": 6, "subjects": [{"code": "ME601", "grade": "B+", "gp": 7}, {"code": "ME602", "grade": "B", "gp": 6}], "sgpa": 6.5}
+  ],
+  "internal_assessments": [
+    {"student_id": "S001", "code": "CS501", "test1": 42, "test2": 38, "assignment": 18, "total_out_of": 100, "status": "complete"},
+    {"student_id": "S001", "code": "CS502", "test1": 40, "test2": 44, "assignment": 16, "total_out_of": 100, "status": "complete"},
+    {"student_id": "S002", "code": "EC301", "test1": 48, "test2": 46, "assignment": 19, "total_out_of": 100, "status": "complete"}
+  ],
+  "exam_schedule_info": {
+    "semester_exam_period": "2026-11-10 to 2026-11-28",
+    "hall_ticket_release": "2026-10-25",
+    "result_expected": "2026-12-20",
+    "re_evaluation_window_days": 10,
+    "arrear_exam_period": "2027-01-15 to 2027-01-25"
+  }
+}

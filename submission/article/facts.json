@@ -1,0 +1,99 @@
+{
+ "pattern_tag": "#tool-selection",
+ "agentcore_features": [],
+ "pattern_doc": "REUSABLE DECISION PATTERN: campus query routing  (#tool-selection)\n\nWhat it does\n    Before the campus helpdesk agent runs any tool, Strands Decider 2B reads the student's\n    message and selects which of the six specialized agents (tools) should handle it:\n    academic, examination, finance, placement, scholarship or general support.\n    When the decider is confident (>= 0.65) the agent is built with only that one tool,\n    which means fewer tokens, a faster LLM turn and no cross-domain hallucination.\n    When confidence is below 0.65 the agent receives all tools and the LLM decides,\n    or the caller returns a clarifying question to the student.\n\nTyped questions and options\n    `tool` (choice): one option per specialized agent tool, plus `none`.\n    - academic_agent: answers questions about courses, attendance, timetables and academic regulations\n    - examination_agent: handles exam schedules, results, hall tickets and internal assessments\n    - finance_agent: resolves fee payment status, receipts, refunds and tuition queries\n    - placement_agent: provides placement drive schedules, eligibility criteria and internship information\n    - scholarship_agent: explains scholarship programs, eligibility, application steps and deadlines\n    - general_support_agent: covers campus facilities, transport, library and general college services\n    - none: no specialized tool needed; the assistant can answer directly\n\n    The option descriptions come from each tool's one-line docstring, so no retraining is needed\n    when a tool is added or renamed.\n\nWiring\n    `CampusToolSelector` wraps `decider_kit.patterns.tool_selection.ToolSelector`.\n    It is called in HackathonAgent before the Strands Agent is constructed:\n\n        selector = CampusToolSelector(decider, tools=TOOLS)\n        narrowed = selector.tools_for(student_message)\n        agent = Agent(model=..., tools=narrowed, ...)\n\n    If confidence < THRESHOLD the agent gets all tools; the caller may also intercept\n    selector.last_selection.confidence < THRESHOLD to return a clarification prompt.\n\nHow to reuse it\n    Copy this file. Replace TOOLS with your own list of @tool functions, each with a clear\n    one-line docstring describing what it handles. Adjust THRESHOLD if your domain has\n    more or fewer clear-cut categories. The Decider reads the docstrings as option\n    descriptions, so sharper docstrings yield sharper routing.",
+ "questions_code": "QUESTIONS: dict[str, Any] = {}",
+ "agent_md": "# CampusAI \u00e2\u20ac\u201d University Helpdesk Agent\n\n## What it does\n\nCampusAI is a conversational assistant for university students. Students ask questions in plain language \u00e2\u20ac\u201d about their grades, upcoming exams, fee payments, placement drives, scholarship deadlines, or campus facilities \u00e2\u20ac\u201d and the agent routes each query to the right data domain and returns a direct, factual answer.\n\nUniversity services are scattered across separate portals and offices. A student trying to check their attendance, understand a fee deadline, and find an upcoming placement drive has to navigate three different systems. CampusAI brings all six domains into a single chat interface.\n\n## Domains covered\n\n| Domain | Examples |\n|---|---|\n| Academic | Courses, attendance, timetable, CGPA, academic regulations |\n| Examinations | Exam schedule, hall tickets, results, internal assessments |\n| Finance | Fee structure, payment status, receipts, refund policy |\n| Placements | Drive schedules, eligibility, companies, internships |\n| Scholarships | Programs, eligibility criteria, application steps, deadlines |\n| Campus (General) | Facilities, transport, library, contacts, academic calendar |\n\n## How the decision works\n\nBefore the language model runs any tool, Strands Decider 2B reads the student's message and selects which of the six tools should handle it. This is the **#tool-selection** pattern.\n\nThe Decider returns a probability distribution over the six tools (plus a `none` option). When one tool scores above 0.65 confidence the agent is built with only that tool \u00e2\u20ac\u201d fewer tokens, a faster LLM turn, and no cross-domain hallucination. When confidence falls below 0.65 the agent receives all tools and the LLM decides, or the caller returns a clarifying question.\n\n## Why Strands Decider 2B\n\n- **Speed:** a single forward pass is faster than a full LLM tool-selection call\n- **Cost:** a 2B decision model is cheaper per token than a large generative model\n- **Calibration:** the Decider returns explicit probabilities, so low-confidence cases can be handled deliberately (ask for clarification rather than guessing)\n- **No hallucination on routing:** the Decider classifies intent; it does not generate answer text, so it cannot fabricate domain information\n\nMeasured latency and accuracy numbers are generated by `./kit bench` and recorded in `submission/bench/results.json`.\n\n## Reusable pattern\n\nThe decision pattern lives in `agent/decision.py`. Replace `TOOLS` with your own `@tool` functions (each with a one-line docstring), adjust `THRESHOLD`, and the Decider will route to your tools. No retraining needed.\n\n## Tech stack\n\n- **Agent runtime:** Strands Agents SDK\n- **Decision model:** Strands Decider 2B\n- **Generative model:** Amazon Nova Pro (Amazon Bedrock)\n- **Data:** synthetic demonstration data in `agent/data/*.json`\n- **Kit:** AWS User Group Madurai Strands Decider hackathon kit\n",
+ "llm_provider_local_runs": "ugmdu",
+ "agent_name": "CampusAI \u00e2\u20ac\u201d Intelligent Multi-Agent Campus Helpdesk",
+ "bench": {
+  "summary": {
+   "decider": {
+    "accuracy": 0.7917,
+    "decisions": 24,
+    "per_question": {
+     "args_grounded": 0.9167,
+     "explicit_request": 0.6667
+    },
+    "latency_p50_ms": 294.8,
+    "latency_p95_ms": 467.6,
+    "usd_per_1k_decisions": 0.0,
+    "confident_share": 0.6667,
+    "accuracy_when_confident": 0.9375,
+    "sent_to_human_at_threshold": 8
+   },
+   "llm": {
+    "accuracy": 0.9583,
+    "decisions": 24,
+    "per_question": {
+     "args_grounded": 0.9167,
+     "explicit_request": 1.0
+    },
+    "latency_p50_ms": 1276.5,
+    "latency_p95_ms": 1426.1,
+    "usd_per_1k_decisions": 0.1785,
+    "confident_share": 1.0,
+    "accuracy_when_confident": 0.9583,
+    "sent_to_human_at_threshold": 0
+   },
+   "speedup_p50": 4.33
+  },
+  "decider_model": null,
+  "decider_mode": "local",
+  "llm_model": "us.amazon.nova-pro-v1:0",
+  "cases": 12,
+  "split": "all",
+  "threshold": 0.7
+ },
+ "bench_table": "| | Strands Decider 2B | us.amazon.nova-pro-v1:0 |\n|---|---|---|\n| Accuracy | 79.2% | 95.8% |\n| Latency p50 per decision | 295 ms | 1276 ms |\n| Latency p95 | 468 ms | 1426 ms |\n| Cost per 1,000 decisions | $0.0000 | $0.1785 |\n| Answered alone at confidence >= 0.7 | 67% | 100% |\n| Accuracy when confident | 93.8% | 95.8% |\n\nAt the median the decider was 4.3x faster than the LLM.\n",
+ "demo_turns": [
+  {
+   "user": "My headphones are broken, I want my money back.",
+   "reply": "Please provide the order ID for the headphones so I can process your refund.",
+   "decisions": [
+    {
+     "pattern": "#guardrails",
+     "tool": "refund_order",
+     "args": {
+      "amount": 249.0,
+      "order_id": "A1002"
+     },
+     "args_grounded": 0.437,
+     "explicit_request": 0.791,
+     "premature": 0.235,
+     "decider_ms": 3075,
+     "verdict": "guide"
+    }
+   ],
+   "latency_ms": 6970
+  },
+  {
+   "user": "It's order A1002, refund the full amount please.",
+   "reply": "Your refund for order A1002 has been processed. You will receive 249.0 back to your original payment method. If you have any further questions, feel free to ask.",
+   "decisions": [
+    {
+     "pattern": "#guardrails",
+     "tool": "refund_order",
+     "args": {
+      "amount": 249,
+      "order_id": "A1002"
+     },
+     "args_grounded": 0.608,
+     "explicit_request": 0.894,
+     "premature": 0.128,
+     "decider_ms": 3894,
+     "verdict": "proceed"
+    }
+   ],
+   "latency_ms": 5813
+  },
+  {
+   "user": "Is it possible to cancel an order after it ships?",
+   "reply": "Once an order has shipped, it cannot be cancelled. However, you can still request a refund after receiving the item. If you have any further questions, feel free to ask.",
+   "decisions": [],
+   "latency_ms": 940
+  }
+ ],
+ "repo_url": "",
+ "video_url": ""
+}

@@ -1,0 +1,59 @@
+{
+  "_note": "SYNTHETIC DEMONSTRATION DATA — not real financial records",
+  "fee_structure": {
+    "Computer Science": {
+      "tuition_per_semester": 45000,
+      "lab_fee_per_semester": 5000,
+      "library_fee_per_year": 2000,
+      "sports_fee_per_year": 1000,
+      "exam_fee_per_semester": 1500,
+      "total_per_semester": 52000
+    },
+    "Electronics": {
+      "tuition_per_semester": 42000,
+      "lab_fee_per_semester": 6000,
+      "library_fee_per_year": 2000,
+      "sports_fee_per_year": 1000,
+      "exam_fee_per_semester": 1500,
+      "total_per_semester": 51000
+    },
+    "Mechanical": {
+      "tuition_per_semester": 40000,
+      "lab_fee_per_semester": 7000,
+      "library_fee_per_year": 2000,
+      "sports_fee_per_year": 1000,
+      "exam_fee_per_semester": 1500,
+      "total_per_semester": 50000
+    },
+    "Civil": {
+      "tuition_per_semester": 38000,
+      "lab_fee_per_semester": 5000,
+      "library_fee_per_year": 2000,
+      "sports_fee_per_year": 1000,
+      "exam_fee_per_semester": 1500,
+      "total_per_semester": 46500
+    }
+  },
+  "payment_transactions": [
+    {"txn_id": "TXN2026001", "student_id": "S001", "amount": 52000, "date": "2026-07-15", "status": "confirmed", "receipt_no": "RCP001", "semester": 5, "mode": "online"},
+    {"txn_id": "TXN2026002", "student_id": "S002", "amount": 51000, "date": "2026-07-18", "status": "confirmed", "receipt_no": "RCP002", "semester": 3, "mode": "online"},
+    {"txn_id": "TXN2026003", "student_id": "S003", "amount": 50000, "date": "2026-07-20", "status": "pending", "receipt_no": null, "semester": 7, "mode": "online"},
+    {"txn_id": "TXN2026004", "student_id": "S004", "amount": 52000, "date": "2026-07-10", "status": "confirmed", "receipt_no": "RCP004", "semester": 1, "mode": "dd"},
+    {"txn_id": "TXN2026005", "student_id": "S005", "amount": 46500, "date": "2026-07-22", "status": "failed", "receipt_no": null, "semester": 5, "mode": "online", "failure_reason": "bank gateway timeout"}
+  ],
+  "refund_policy": {
+    "before_class_commencement": "100% refund",
+    "within_15_days_of_commencement": "80% refund",
+    "within_30_days": "50% refund",
+    "after_30_days": "no refund",
+    "processing_time_days": 15,
+    "contact": "finance@campus.edu"
+  },
+  "due_dates": {
+    "odd_semester_fee_deadline": "2026-08-01",
+    "even_semester_fee_deadline": "2027-02-01",
+    "late_fee_per_day": 50,
+    "max_late_fee": 2000
+  },
+  "payment_modes": ["Online (NetBanking/UPI/Card)", "Demand Draft", "Cash (accounts office)"]
+}
